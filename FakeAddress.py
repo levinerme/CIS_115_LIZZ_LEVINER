@@ -1,0 +1,12 @@
+BuildingNum = input("What's the Building Number? ")
+Streetname = input("Whats your Street Name? ")
+StreetAddress = input("What's your Street Address? ")
+StateAddress = input("what's your State? ")
+CityAddress = input("What's your City? ")
+ZipCode = input("What's your Zipcode? ")
+
+print(f"Your Building Number is: {BuildingNum}")
+print(f"Your Street Name is: {Streetname}")
+print(f"Your Street Address is: {StateAddress}")
+print(f"Your City Address is: {CityAddress}")
+print(f"Your ZipCode is: {ZipCode}")43
