@@ -1,0 +1,5 @@
+num1 = input("What's your first number? ")
+num2 =input("What's your second number? ")
+divisionNumber = float(num1)//float(num2)
+TotalDivision = int(divisionNumber)
+print(f"your total integer value is: {TotalDivision}")
