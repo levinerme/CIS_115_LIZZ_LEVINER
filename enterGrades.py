@@ -1,3 +1,10 @@
 UserGradeNum = input("What's the number of grades you'd like? ")
 RespectiveGrades = input("What's your grades? ")
-print("I will displays grade numbers from 1 through 10")
+MAX=10
+total=0.0
+print("This willl calculate your grade sum")
+print(f"{MAX} numbers you will enter.")
+
+for counter in range (MAX):
+        number =int(input("Enter a number: "))
+        total = toal + number
