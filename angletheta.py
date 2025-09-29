@@ -9,8 +9,8 @@ main()
 y= num1
 x= num2
 
-def main():
+def theta():
     theta = math.atan2(y,x) 
     Degrees = theta * (180 / 3.14)
     print(f'The degress for the right triangle {Degrees}')
-main()
+theta()
