@@ -1,4 +1,4 @@
-mass = int(input("What's your mass?: "))
+mass = float(input("What's your mass?: "))
 velocity = int(input("What's your velocity?: "))
 
 def kinetic_energy(mass, velocity):
