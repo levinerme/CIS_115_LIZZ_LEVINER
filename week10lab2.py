@@ -1,11 +1,15 @@
 student_grades = {
-    "Alice": [85, 90, 78],
-    "Bob": [92, 88, 95],
-    "Charlie": [70, 75, 80],
-    "Diana": [100, 98, 95]
+    "Alice": 85, 
+    "Bob": 92,
+    "Charlie": 80,
+    "Diana": 95
 }
 
 def caluclate_average_grade(student_grades):
-        total = student_grades
-        print(f"{total}:{average}")
+    total = 0
+    for grades in student_grades:
+        total += student_grades[grades]
+    average = total / len(student_grades)
+    print(average)
 caluclate_average_grade(student_grades)
+
