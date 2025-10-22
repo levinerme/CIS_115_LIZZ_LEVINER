@@ -1,4 +1,0 @@
-student_grades = {}
-
-def caluclate_average_grade(student_grades):
-    
