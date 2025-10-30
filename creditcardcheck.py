@@ -11,6 +11,7 @@ for i in range (1, len(ccNum), 2):
         ccNum[i] =ccNum[i] % 10 + 1  
 
     total = sum(ccNum)
+    return(total % 10) == 0
 
 if total == 0:
     print(f"The credit card number {ccNum} is valid!")
