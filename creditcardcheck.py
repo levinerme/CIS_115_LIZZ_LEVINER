@@ -4,7 +4,7 @@ def validateCreditCard(ccNum):
     ccNum = ccNum[::-1]
     ccNum = [int(x) for x in ccNum]
 
-for i in range (1, len(ccNum), 2):
+for i in range (1, len(ccNum)):
     ccNum [i] *=2
 
     if ccNum[i] >9:
