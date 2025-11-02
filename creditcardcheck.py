@@ -17,3 +17,4 @@ if total == 0:
     print(f"The credit card number {ccNum} is valid!")
 else:
     print(f"Invalid credit card number {ccNum} entered. Please try again.")
+validteCreditCard(ccNum)
