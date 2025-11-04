@@ -1,5 +1,5 @@
 
-print("	---------------------------------------------------------------\n"\
+print("---------------------------------------------------------------\n"\
 "	                           PRODUCT CATALOG\n"\
 "	---------------------------------------------------------------\n"\
 "	1      |    USB Drive(128 GB)                        |   $12.00\n"\
@@ -66,19 +66,20 @@ else y:
 #whatQTY=input("blahblahblah)
 #usb["quantity"]=(3)
 
-FirstName =input("Enter your First Name: ")
-LastName=input("Enter your Last Name: "
-Address=input("Enter your address: ")
-City=input("Enter your city: ") 
-State=input("Enter your state: ")
-ZipCode=input("Enter your state: ")
-Email=input("Enter your Email: ")
-Phone=input("Enteryour Phone number: ")
+firstName =input("Enter your First Name: ")
+lastName =input("Enter your Last Name: "
+address=input("Enter your address: ")
+city=input("Enter your city: ") 
+state=input("Enter your state: ")
+zipCode=input("Enter your state: ")
+email=input("Enter your Email: ")
+phone=input("Enteryour Phone number: ")
 
 ccNum =input("Enter your credit card number: ")
 
 def validateCreditCard(ccNum):
-
+	Expiration=input("Enter the expiration date on your card:")
+	CVV=input(“Please enter your CVV: ”)
     ccNum = ccNum[::-1]
     odd_digits = 0
     even_digits = 0
@@ -92,18 +93,34 @@ def validateCreditCard(ccNum):
         else:
             even_digits = x
         total = odd_digits + even_digits
-        
+         
     if total % 10== 0:
       print(f"The credit card number {ccNum} is valid!")
     else:
         print(f"Invalid credit card number {ccNum} entered. Please try again.")
 validateCreditCard(ccNum)
 
-Expiration=input("Enter the expiration date on your card:")
-CVV=input("“Please enter your CVV: ”)
-
-
-
-
+print("---------------------------------------------------------------\n"\
+"		   				Billing/Shipping Information\n"\
+"	---------------------------------------------------------------\n"\)
+"			print(firstName)\n"\
+"			print(lastName)\n"\
+"			print(address)\n"\
+"			print(city)\n"\
+"			print(state)\n"\
+"			print(zipcode)\n"\
+"			print(email)\n"\
+"			print(phone)\n"\			
+print("---------------------------------------------------------------\n"\
+"                          Shopping Cart Information\n"\
+"---------------------------------------------------------------\n"\
+" -----------------------------------------------------------------------\n"\
+" ********************************************************************\n"\
+"  SKU             Qty          Price             Description               Total\n"\
+"
+"
+"
+"
+" *********************************************************************\n"\)
 
 
