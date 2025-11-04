@@ -52,9 +52,10 @@ Smart_TV={
 EnteredID = input("Enter the product ID you would like add to your shopping cart!")
 Quantity =input(f"Enter quanity for product{eneteredID}: ")
 
-Greedy =input("Would you like to add another product (y or n)?”)
+Greedy =input(Would you like to add another product (y or n))
+
 if n:
-	print("“Are you ready to check out?”"
+	checkout=input("Are you ready to check out?”)
 else y:
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
