@@ -26,7 +26,7 @@ Mac_Book_pro = {
 }
 Arduino_1010 ={
 	"ProductID":3,
-	"SKU":"chip_1010"
+	"SKU":"chip_1010",
 	"Price":48.00,
 	"Quantity":0,
 	"Description":"Arduino microprocessor",
@@ -55,9 +55,17 @@ Quantity =input(f"Enter quanity for product{eneteredID}: ")
 Greedy =input("Would you like to add another product (y or n)")
 
 if Greedy == "n":
-	checkout=input("Are you ready to check out?”)
+	checkout=input("Are you ready to check out? (y or n)”)
 else Greedy == "y":
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
+
+cart=[]
+def adding_cart(product, quantity):
+	for item in cart:
+		if item == product
+		DoubleCheck=input("This products already in your cart would you like to add something else? (y/n)")
+		if  DoubleCheck == "y"
+		print"
 
 #check if the products already in the cart idfk how to do that
 #ask again??idk
