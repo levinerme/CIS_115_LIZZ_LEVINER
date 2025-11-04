@@ -50,20 +50,15 @@ Smart_TV={
 	"Stock":225
 }
 
-whichID = input("Enter the product ID you would like add to your shopping cart!")
+EnteredID = input("Enter the product ID you would like add to your shopping cart!")
+Quantity =input(f"Enter quanity for product{eneteredID}: ")
+Greedy =input("“Would you like to add another product (y or n)?”)
 
-ProductAttributes={
-  "1", "usb_k981",	"$12.00", " ",	"USB 128 GB drive", "1000",
-  "2",	"mbpro_490",	"$2900.00",	" ",	"Mac Book Pro 15 inch",	"45",
-  "3",	"chip_1010",	"$48.00", " ", "Arduino microprocessor",	"325",
-  "4",	"cam_78",	"$156.00"	 " ",	"Ring Camera Model 78",	"98",
-  "5",	"smt_tv_100",	"$359.00",	" ",	"TCL Smart TV.", 	"225",
-}
-headersA = ["Product ID", "SKU", "Price", "QTY", "Description", "Qty on Hand"]
-
+			  
 #example of adding in product quanity
 #whatQTY=input("blahblahblah)
 #usb["quantity"]=(3)
+
 
 
 
