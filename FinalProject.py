@@ -22,7 +22,7 @@ Mac_Book_pro = {
 	"SKU":"mbpro_490",
 	"Price":2900.00,
 	"Quantity":0,
-	"Description":"Mac Book Pro 15 inch
+	"Description":"Mac Book Pro 15 inch",
 	"Stock":45
 }
 Arduino_1010 ={
@@ -64,5 +64,6 @@ headersA = ["Product ID", "SKU", "Price", "QTY", "Description", "Qty on Hand"]
 #example of adding in product quanity
 #whatQTY=input("blahblahblah)
 #usb["quantity"]=(3)
+
 
 
