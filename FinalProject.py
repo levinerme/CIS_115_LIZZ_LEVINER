@@ -59,10 +59,23 @@ if n:
 else y:
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
+#check if the products already in the cart idfk how to do that
+#ask again??idk
 			  
 #example of adding in product quanity
 #whatQTY=input("blahblahblah)
 #usb["quantity"]=(3)
+
+FirstName =input("Enter your First Name: ")
+LastName=input("Enter your Last Name: "
+Address=input("Enter your address: ")
+City=input("Enter your city: ") 
+State=input("Enter your state: ")
+ZipCode=input("Enter your state: ")
+Email=input("Enter your Email: ")
+Phone=input("Enteryour Phone number: ")
+
+
 
 
 
