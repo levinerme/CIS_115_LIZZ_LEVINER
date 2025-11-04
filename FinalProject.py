@@ -7,3 +7,4 @@ a =[
   ["4",	"cam_78",	"$156.00"	 "",	"Ring Camera Model 78",	"98"]
   ["5",	"smt_tv_100",	"$359.00",	"",	"TCL Smart TV.", 	"225"]
 ]
+headers = ["Product ID", "SKU", "Price", "QTY", "Description", "Qty oh Hand"]
