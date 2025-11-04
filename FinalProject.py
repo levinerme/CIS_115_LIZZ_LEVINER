@@ -56,7 +56,7 @@ Greedy =input("Would you like to add another product (y or n)")
 
 if Greedy == "n":
 	checkout=input("Are you ready to check out?”)
-else y:
+else Greedy == "y":
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
 #check if the products already in the cart idfk how to do that
@@ -67,7 +67,7 @@ else y:
 #usb["quantity"]=(3)
 
 firstName =input("Enter your First Name: ")
-lastName =input("Enter your Last Name: "
+lastName =input("Enter your Last Name: ")
 address=input("Enter your address: ")
 city=input("Enter your city: ") 
 state=input("Enter your state: ")
