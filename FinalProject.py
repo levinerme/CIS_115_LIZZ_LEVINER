@@ -1,4 +1,4 @@
-from tabulate import tabulate
+CREATE TABLE PRODUCTCATALOG ()
 b =[
   ["1", "USB Drive(128 GB)", "$12.00"]
   ["2", "Mac Book Pro(15 inch)", "$2900.00",]
