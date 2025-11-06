@@ -49,14 +49,14 @@ Smart_TV={
 	"Stock":225
 }
 
-EnteredID = input("Enter the product ID you would like add to your shopping cart!")
-Quantity =input(f"Enter quanity for product{eneteredID}: ")
+enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
+Quantity =input(f"Enter quanity for product{enteredID}: ")
 
 Greedy =input("Would you like to add another product (y/n)")
 if Greedy == "n" :
 	checkout= input("Are you ready to check out? (y/n)")
 else:
-	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
+	enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
 cart=[]
 def adding_cart(product, quantity):
@@ -64,7 +64,7 @@ def adding_cart(product, quantity):
 		if item == product:
 			DoubleCheck=input("This products already in your cart would you like to add something else? (y/n)")
 		if  DoubleCheck == "y":
-			EnteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
+			enteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
 		else:
 			checkout= input("Are you ready to check out? (y/n)")
 
@@ -73,53 +73,49 @@ lastName =input("Enter your Last Name: ")
 address=input("Enter your address: ")
 city=input("Enter your city: ") 
 state=input("Enter your state: ")
-zipCode=input("Enter your state: ")
+zipCode=input("Enter your Zipcode: ")
 email=input("Enter your Email: ")
-phone=input("Enteryour Phone number: ")
+phone=input("Enter your Phone number: ")
 ccNum =input("Enter your credit card number: ")
 
 def validateCreditCard(ccNum):
-	Expiration=input("Enter the expiration date on your card:")
-	CVV=input("Please enter your CVV: ")
-	odd_digits = 0
-	even_digits = 0
-	total = 0
-	ccNum = ccNum[::-1]
-	for x in ccNum[::2]:
+    Expiration = input("Enter the expiration date on your card:")
+    CVV = input("Please enter your CVV: ")
+    odd_digits = 0
+    even_digits = 0
+    ccNum = ccNum[::-1]
+    for x in ccNum[::2]:
         odd_digits += int(x)
     for x in ccNum[1::2]:
         x = int(x) * 2
-    if x >= 10:
-        even_digits += (1 + ( x % 10))
+        if x >= 10:
+            even_digits += (1 + (x % 10))
+        else:
+            even_digits += x
+    total = odd_digits + even_digits
+    if total % 10 == 0:
+        print(f"The credit card number {ccNum[::-1]} is valid!")
     else:
-        even_digits = x
-        total = odd_digits + even_digits
-         
-    if total % 10== 0:
-      print(f"The credit card number {ccNum} is valid!")
-    else:
-        print(f"Invalid credit card number {ccNum} entered. Please try again.")
+        print(f"Invalid credit card number {ccNum[::-1]} entered. Please try again.")
+
 validateCreditCard(ccNum)
 
 print("---------------------------------------------------------------\n"\
 "		   				Billing/Shipping Information\n"\
-"	---------------------------------------------------------------\n"\)
-"			print(firstName)\n"\
-"			print(lastName)\n"\
-"			print(address)\n"\
-"			print(city)\n"\
-"			print(state)\n"\
-"			print(zipcode)\n"\
-"			print(email)\n"\
-"			print(phone)\n"\			
+"	---------------------------------------------------------------")
+print(firstName)
+print(lastName)
+print(address)
+print(city)
+print(state)
+print(zipcode)
+print(email)
+print(phone)			
 print("---------------------------------------------------------------\n"\
 "                          Shopping Cart Information\n"\
 "---------------------------------------------------------------\n"\
 " -----------------------------------------------------------------------\n"\
 " ********************************************************************\n"\
-"  SKU             Qty          Price             Description               Total\n"\
-"
-"
-"
-"
-" *********************************************************************\n"\) 
+"  SKU             Qty          Price             Description     Total\n"\
+
+" *********************************************************************\n") 
