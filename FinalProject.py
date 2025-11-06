@@ -55,7 +55,7 @@ Quantity =input(f"Enter quanity for product{eneteredID}: ")
 Greedy =input("Would you like to add another product (y or n)")
 
 if Greedy == "n":
-	checkout=input("Are you ready to check out? (y or n)”)
+	checkout= input("Are you ready to check out? (y/n)")
 else Greedy == "y":
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
@@ -82,7 +82,6 @@ state=input("Enter your state: ")
 zipCode=input("Enter your state: ")
 email=input("Enter your Email: ")
 phone=input("Enteryour Phone number: ")
-
 ccNum =input("Enter your credit card number: ")
 
 def validateCreditCard(ccNum):
@@ -129,4 +128,4 @@ print("---------------------------------------------------------------\n"\
 "
 "
 "
-" *********************************************************************\n"\)
+" *********************************************************************\n"\) 
