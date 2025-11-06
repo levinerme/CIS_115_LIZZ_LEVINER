@@ -52,27 +52,21 @@ Smart_TV={
 EnteredID = input("Enter the product ID you would like add to your shopping cart!")
 Quantity =input(f"Enter quanity for product{eneteredID}: ")
 
-Greedy =input("Would you like to add another product (y or n)")
-
-if Greedy == "n":
+Greedy =input("Would you like to add another product (y/n)")
+if Greedy == "n" :
 	checkout= input("Are you ready to check out? (y/n)")
-else Greedy == "y":
+else:
 	EnteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
 cart=[]
 def adding_cart(product, quantity):
 	for item in cart:
-		if item == product
-		DoubleCheck=input("This products already in your cart would you like to add something else? (y/n)")
-		if  DoubleCheck == "y"
-		print"
-
-#check if the products already in the cart idfk how to do that
-#ask again??idk
-			  
-#example of adding in product quanity
-#whatQTY=input("blahblahblah)
-#usb["quantity"]=(3)
+		if item == product:
+			DoubleCheck=input("This products already in your cart would you like to add something else? (y/n)")
+		if  DoubleCheck == "y":
+			EnteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
+		else:
+			checkout= input("Are you ready to check out? (y/n)")
 
 firstName =input("Enter your First Name: ")
 lastName =input("Enter your Last Name: ")
@@ -86,11 +80,11 @@ ccNum =input("Enter your credit card number: ")
 
 def validateCreditCard(ccNum):
 	Expiration=input("Enter the expiration date on your card:")
-	CVV=input(“Please enter your CVV: ”)
-    ccNum = ccNum[::-1]
-    odd_digits = 0
-    even_digits = 0
-    total = 0
+	CVV=input("Please enter your CVV: ")
+   	odd_digits = 0
+  	even_digits = 0
+   	total = 0
+	ccNum = ccNum[::-1]
     for x in ccNum[::2]:
         odd_digits += int(x)
     for x in ccNum[1::2]:
