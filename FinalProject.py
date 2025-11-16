@@ -68,6 +68,8 @@ def adding_cart(product, quantity):
 		else:
 			checkout= input("Are you ready to check out? (y/n)")
 
+totalCost = enteredID +
+
 firstName =input("Enter your First Name: ")
 lastName =input("Enter your Last Name: ")
 address=input("Enter your address: ")
