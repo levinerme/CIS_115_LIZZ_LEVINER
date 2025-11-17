@@ -48,13 +48,12 @@ Smart_TV={
 	"Description":"TCL Smart TV",
 	"Stock":225
 }
-
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
-Quantity =input(f"Enter quanity for product{enteredID}: ")
+Quantity =input(f"Enter quanity for product {enteredID}: ")
 
 Greedy =input("Would you like to add another product (y/n)")
 if Greedy == "n" :
-	checkout= input("Are you ready to check out? (y/n)")
+		checkout= input("Are you ready to check out? (y/n)")
 else:
 	enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
 
@@ -66,10 +65,23 @@ def adding_cart(product, quantity):
 		if  DoubleCheck == "y":
 			enteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
 		else:
-			checkout= input("Are you ready to check out? (y/n)")
+			checkout= input("Are you ready to check out?: (y/n) ")
 
-totalCost = enteredID +
 
+def cart_total(cart):
+	total = 0.0
+	for item in cart:
+		if isinstance(item, dict):
+			price = item.get('Price')
+			qty = item.get('Quantity', 1)
+		else:
+			price, qty = item
+		total += price * qty
+	return round(total, 2)
+
+print("---------------------------------------------------------------\n"\
+"	                      CHECKOUT PAGE\n"\
+"---------------------------------------------------------------\n")
 firstName =input("Enter your First Name: ")
 lastName =input("Enter your Last Name: ")
 address=input("Enter your address: ")
@@ -78,7 +90,7 @@ state=input("Enter your state: ")
 zipCode=input("Enter your Zipcode: ")
 email=input("Enter your Email: ")
 phone=input("Enter your Phone number: ")
-ccNum =input("Enter your credit card number: ")
+ccNum =input("Enter your credit card number (no spaces): ")
 
 def validateCreditCard(ccNum):
     Expiration = input("Enter the expiration date on your card:")
@@ -102,22 +114,24 @@ def validateCreditCard(ccNum):
 
 validateCreditCard(ccNum)
 
-print("---------------------------------------------------------------\n"\
+print("--------------------------------------------------------------\n"\
 "		   				Billing/Shipping Information\n"\
-"	---------------------------------------------------------------")
+"---------------------------------------------------------------------")
 print(firstName)
 print(lastName)
 print(address)
 print(city)
 print(state)
-print(zipcode)
+print(zipCode)
 print(email)
 print(phone)			
-print("---------------------------------------------------------------\n"\
+print("-----------------------------------------------------------------\n"\
 "                          Shopping Cart Information\n"\
-"---------------------------------------------------------------\n"\
-" -----------------------------------------------------------------------\n"\
-" ********************************************************************\n"\
-"  SKU             Qty          Price             Description     Total\n"\
+"-----------------------------------------------------------------------------\n"\
+" ------------------------------------------------------------------------------\n"\
+" ******************************************************************************\n")
+"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
 
-" *********************************************************************\n") 
+#I need to create a way to print theses out neatly 
+print("*******************************************************************************************\n") 
+#totalCostINT
