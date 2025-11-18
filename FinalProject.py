@@ -48,6 +48,7 @@ Smart_TV={
 	"Description":"TCL Smart TV",
 	"Stock":225
 }
+
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
 Quantity =input(f"Enter quanity for product {enteredID}: ")
 
@@ -78,6 +79,7 @@ def cart_total(cart):
 			price, qty = item
 		total += price * qty
 	return round(total, 2)
+
 
 print("---------------------------------------------------------------\n"\
 "	                      CHECKOUT PAGE\n"\
@@ -134,4 +136,3 @@ print("-----------------------------------------------------------------\n"\
 
 #I need to create a way to print theses out neatly 
 print("*******************************************************************************************\n") 
-#totalCostINT
