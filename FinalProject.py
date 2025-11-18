@@ -48,15 +48,19 @@ Smart_TV={
 	"Description":"TCL Smart TV",
 	"Stock":225
 }
+def start_shop():
+	enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
+	Quantity =input(f"Enter quanity for product {enteredID}: ")
 
-enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
-Quantity =input(f"Enter quanity for product {enteredID}: ")
-
-Greedy =input("Would you like to add another product (y/n)")
-if Greedy == "n" :
+	Greedy =input("Would you like to add another product (y/n)")
+	if Greedy == "n" :
 		checkout= input("Are you ready to check out? (y/n)")
-else:
-	enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
+		if checkout == "n" :
+			pass
+	elif Greedy == "y" :
+		enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
+	else:
+		pass
 
 cart=[]
 def adding_cart(product, quantity):
@@ -67,7 +71,6 @@ def adding_cart(product, quantity):
 			enteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
 		else:
 			checkout= input("Are you ready to check out?: (y/n) ")
-
 
 def cart_total(cart):
 	total = 0.0
@@ -80,20 +83,28 @@ def cart_total(cart):
 		total += price * qty
 	return round(total, 2)
 
+def checkout():
+	print("---------------------------------------------------------------\n"\
+	"	                      CHECKOUT PAGE\n"\
+	"---------------------------------------------------------------\n")
+	firstName =input("Enter your First Name: ")
+	lastName =input("Enter your Last Name: ")
+	address=input("Enter your address: ")
+	city=input("Enter your city: ") 
+	state=input("Enter your state: ")
+	zipCode=input("Enter your Zipcode: ")
+	email=input("Enter your Email: ")
+	phone=input("Enter your Phone number: ")
+	ccNum =input("Enter your credit card number (no spaces): ")
+	validateCreditCard(ccNum)
 
-print("---------------------------------------------------------------\n"\
-"	                      CHECKOUT PAGE\n"\
-"---------------------------------------------------------------\n")
-firstName =input("Enter your First Name: ")
-lastName =input("Enter your Last Name: ")
-address=input("Enter your address: ")
-city=input("Enter your city: ") 
-state=input("Enter your state: ")
-zipCode=input("Enter your Zipcode: ")
-email=input("Enter your Email: ")
-phone=input("Enter your Phone number: ")
-ccNum =input("Enter your credit card number (no spaces): ")
+	for item, quantity in cart:
+		if item == usb_drive and quantity > 5:
+			quantity = 5
+			print("You can not purchase more than x USB Drives")
+			if item == Mac_Book_pro and quantity > 3:
 
+	
 def validateCreditCard(ccNum):
     Expiration = input("Enter the expiration date on your card:")
     CVV = input("Please enter your CVV: ")
@@ -114,25 +125,27 @@ def validateCreditCard(ccNum):
     else:
         print(f"Invalid credit card number {ccNum[::-1]} entered. Please try again.")
 
-validateCreditCard(ccNum)
 
-print("--------------------------------------------------------------\n"\
-"		   				Billing/Shipping Information\n"\
-"---------------------------------------------------------------------")
-print(firstName)
-print(lastName)
-print(address)
-print(city)
-print(state)
-print(zipCode)
-print(email)
-print(phone)			
-print("-----------------------------------------------------------------\n"\
-"                          Shopping Cart Information\n"\
-"-----------------------------------------------------------------------------\n"\
-" ------------------------------------------------------------------------------\n"\
-" ******************************************************************************\n")
-"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
+def show_billing():
+	print("--------------------------------------------------------------\n"\
+	"		   				Billing/Shipping Information\n"\
+	"---------------------------------------------------------------------")
+	print(firstName)
+	print(lastName)
+	print(address)
+	print(city)
+	print(state)
+	print(zipCode)
+	print(email)
+	print(phone)			
+	print("-----------------------------------------------------------------\n"\
+	"                          Shopping Cart Information\n"\
+	"-----------------------------------------------------------------------------\n"\
+	" ------------------------------------------------------------------------------\n"\
+	" ******************************************************************************\n")
+	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
 
-#I need to create a way to print theses out neatly 
-print("*******************************************************************************************\n") 
+	#I need to create a way to print theses out neatly 
+	print("*******************************************************************************************\n") 
+
+startshop()
