@@ -48,18 +48,18 @@ Smart_TV={
 	"Description":"TCL Smart TV",
 	"Stock":225
 }
-def start_shop():
-	enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
-	Quantity =input(f"Enter quanity for product {enteredID}: ")
+enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
+quantity =input(f"Enter quanity for product {enteredID}: ")
 
-	Greedy =input("Would you like to add another product (y/n)")
-	if Greedy == "n" :
+Greedy =input("Would you like to add another product (y/n)")
+if Greedy == "n" :
 		checkout= input("Are you ready to check out? (y/n)")
 		if checkout == "n" :
 			pass
-	elif Greedy == "y" :
+elif Greedy == "y" :
 		enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
-	else:
+		quantity =input(f"Enter quanity for product {enteredID}: ")
+else:
 		pass
 
 cart=[]
@@ -71,6 +71,26 @@ def adding_cart(product, quantity):
 			enteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
 		else:
 			checkout= input("Are you ready to check out?: (y/n) ")
+
+	for item, quantity in cart:
+		if item == usb_drive and quantity > 5:
+			quantity = 5
+			print("You can not purchase more than 5 USB Drives")
+			if item == Mac_Book_pro and quantity > 3:
+				quuantity = 3
+			print("You can not purchase more than 3 Mac Book Pros")
+			if item == Arduino_1010 and quantity > 10:
+				quantity = 10
+			print("You can not purchase more than 10 Arduino 1010s")
+			if item == Ring_camera and quantity > 4:
+				quantity = 4
+			print("You can not purchase more than 4 Ring Cameras")
+			if item == Smart_TV and quantity > 2:
+				quantity = 2
+			print("You can not purchase more than 2 Smart TVs")
+			if item == Mac_Book_pro and quantity > 3:
+				quantity = 3
+			print("You can not purchase more than 3 Mac Book Pros")
 
 def cart_total(cart):
 	total = 0.0
@@ -87,44 +107,35 @@ def checkout():
 	print("---------------------------------------------------------------\n"\
 	"	                      CHECKOUT PAGE\n"\
 	"---------------------------------------------------------------\n")
-	firstName =input("Enter your First Name: ")
-	lastName =input("Enter your Last Name: ")
-	address=input("Enter your address: ")
-	city=input("Enter your city: ") 
-	state=input("Enter your state: ")
-	zipCode=input("Enter your Zipcode: ")
-	email=input("Enter your Email: ")
-	phone=input("Enter your Phone number: ")
-	ccNum =input("Enter your credit card number (no spaces): ")
-	validateCreditCard(ccNum)
+firstName =input("Enter your First Name: ")
+lastName =input("Enter your Last Name: ")
+address=input("Enter your address: ")
+city=input("Enter your city: ") 
+state=input("Enter your state: ")
+zipCode=input("Enter your Zipcode: ")
+email=input("Enter your Email: ")
+phone=input("Enter your Phone number: ")
+ccNum =input("Enter your credit card number (no spaces): ")
 
-	for item, quantity in cart:
-		if item == usb_drive and quantity > 5:
-			quantity = 5
-			print("You can not purchase more than x USB Drives")
-			if item == Mac_Book_pro and quantity > 3:
-
-	
 def validateCreditCard(ccNum):
-    Expiration = input("Enter the expiration date on your card:")
-    CVV = input("Please enter your CVV: ")
-    odd_digits = 0
-    even_digits = 0
-    ccNum = ccNum[::-1]
-    for x in ccNum[::2]:
-        odd_digits += int(x)
-    for x in ccNum[1::2]:
+	Expiration = input("Enter the expiration date on your card:")
+	CVV = input("Please enter your CVV: ")
+	odd_digits = 0
+	even_digits = 0
+	ccNum = ccNum[::-1]
+for x in ccNum[::2]:
+     	odd_digits += int(x)
+for x in ccNum[1::2]:
         x = int(x) * 2
         if x >= 10:
             even_digits += (1 + (x % 10))
         else:
             even_digits += x
-    total = odd_digits + even_digits
-    if total % 10 == 0:
-        print(f"The credit card number {ccNum[::-1]} is valid!")
-    else:
-        print(f"Invalid credit card number {ccNum[::-1]} entered. Please try again.")
-
+total = odd_digits + even_digits
+if total % 10 == 0:
+	print(f"The credit card number {ccNum[::-1]} is valid!")
+else:
+	print(f"Invalid credit card number {ccNum[::-1]} entered. Please try again.")
 
 def show_billing():
 	print("--------------------------------------------------------------\n"\
@@ -147,5 +158,5 @@ def show_billing():
 
 	#I need to create a way to print theses out neatly 
 	print("*******************************************************************************************\n") 
+	print(f"Your cart total is: ")
 
-startshop()
