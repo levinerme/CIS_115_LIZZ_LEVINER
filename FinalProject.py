@@ -48,49 +48,31 @@ Smart_TV={
 	"Description":"TCL Smart TV",
 	"Stock":225
 }
+quantity_limits={
+		"usb_drive":5,
+		"MAc_Book_pro":3,
+		"Arduino_1010":10,
+		"Ring_camera":4,
+		"Smart_TV":2
+	}
+boughtItems=[]
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
 quantity =input(f"Enter quanity for product {enteredID}: ")
+boughtItems[enteredID] = boughtItems.get(enteredID, 0)+int(quantity)
 
-Greedy =input("Would you like to add another product (y/n)")
+limit = quantity_limits.get(eneteredID,None)
+if limit and quantity > limit:
+	print(f"You can't purchase more than {limit} of {enteredID}")
+	quantity = limit
+if eneteredID in cart:
+	print(f"{eneteredID} is already in your cart! {cart[eneteredID]}")
+	
+Greedy =input("Would you like to add another product? (y/n): ")
 if Greedy == "n" :
-		checkout= input("Are you ready to check out? (y/n)")
-		if checkout == "n" :
-			pass
-elif Greedy == "y" :
-		enteredID = print(input("Enter the product ID you would like add to your shopping cart!"))
-		quantity =input(f"Enter quanity for product {enteredID}: ")
-else:
-		pass
-
-cart=[]
-def adding_cart(product, quantity):
-	for item in cart:
-		if item == product:
-			DoubleCheck=input("This products already in your cart would you like to add something else? (y/n)")
-		if  DoubleCheck == "y":
-			enteredID=print(input("Enter the product ID you would like add to your shopping cart!"))
-		else:
-			checkout= input("Are you ready to check out?: (y/n) ")
-
-	for item, quantity in cart:
-		if item == usb_drive and quantity > 5:
-			quantity = 5
-			print("You can not purchase more than 5 USB Drives")
-			if item == Mac_Book_pro and quantity > 3:
-				quuantity = 3
-			print("You can not purchase more than 3 Mac Book Pros")
-			if item == Arduino_1010 and quantity > 10:
-				quantity = 10
-			print("You can not purchase more than 10 Arduino 1010s")
-			if item == Ring_camera and quantity > 4:
-				quantity = 4
-			print("You can not purchase more than 4 Ring Cameras")
-			if item == Smart_TV and quantity > 2:
-				quantity = 2
-			print("You can not purchase more than 2 Smart TVs")
-			if item == Mac_Book_pro and quantity > 3:
-				quantity = 3
-			print("You can not purchase more than 3 Mac Book Pros")
+		checkout= input("Are you ready to check out? (y/n): ")
+		if checkout == "y" :
+				break
+		else: print("Continue shopping!")
 
 def cart_total(cart):
 	total = 0.0
@@ -155,7 +137,7 @@ def show_billing():
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n")
 	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
-
+					print(f"{quantity}
 	#I need to create a way to print theses out neatly 
 	print("*******************************************************************************************\n") 
 	print(f"Your cart total is: ")
