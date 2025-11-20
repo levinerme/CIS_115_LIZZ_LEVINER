@@ -57,11 +57,11 @@ quantity_limits={
 	}
 boughtItems=[]
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
-quantity =input(f"Enter quanity for product {enteredID}: ")
-boughtItems[enteredID] = boughtItems.get(enteredID, 0)+int(quantity)
+Quantity =input(f"Enter quanity for product {enteredID}: ")
+boughtItems[enteredID] = boughtItems.get(enteredID, 0)+int(Quantity)
 
 limit = quantity_limits.get(enteredID, None)
-if limit and quantity > limit:
+if limit and Quantity > limit:
 	print(f"You can't purchase more than {limit} of {enteredID}")
 	quantity = limit
 if enteredID in boughtItems:
@@ -74,16 +74,12 @@ if Greedy == "n" :
 				pass
 		else: print("Continue shopping!")
 
-def cart_total(cart):
-	total = 0.0
-	for item in cart:
-		if isinstance(item, dict):
-			price = item.get('Price')
-			qty = item.get('Quantity', 1)
-		else:
-			price, qty = item
-		total += price * qty
-	return round(total, 2)
+
+total = 0.0
+for productID, Quantity in boughtItems.items():
+	itemPrices=Price[productID]
+	math= Price * Quantity
+	total+=math
 
 def checkout():
 	print("---------------------------------------------------------------\n"\
@@ -137,4 +133,4 @@ def show_billing():
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n")
 	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
-	
+	print(f"{Quantity}, {Price}, {Description} {total} sep=_______")
