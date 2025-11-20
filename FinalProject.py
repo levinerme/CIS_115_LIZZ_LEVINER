@@ -60,18 +60,18 @@ enteredID = input("Enter the product ID you would like add to your shopping cart
 quantity =input(f"Enter quanity for product {enteredID}: ")
 boughtItems[enteredID] = boughtItems.get(enteredID, 0)+int(quantity)
 
-limit = quantity_limits.get(eneteredID,None)
+limit = quantity_limits.get(enteredID, None)
 if limit and quantity > limit:
 	print(f"You can't purchase more than {limit} of {enteredID}")
 	quantity = limit
-if eneteredID in cart:
-	print(f"{eneteredID} is already in your cart! {cart[eneteredID]}")
+if enteredID in boughtItems:
+	print(f"{enteredID} is already in your cart! {boughtItems[enteredID]}")
 	
 Greedy =input("Would you like to add another product? (y/n): ")
 if Greedy == "n" :
 		checkout= input("Are you ready to check out? (y/n): ")
 		if checkout == "y" :
-				break
+				pass
 		else: print("Continue shopping!")
 
 def cart_total(cart):
@@ -137,8 +137,4 @@ def show_billing():
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n")
 	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
-					print(f"{quantity}
-	#I need to create a way to print theses out neatly 
-	print("*******************************************************************************************\n") 
-	print(f"Your cart total is: ")
-
+	
