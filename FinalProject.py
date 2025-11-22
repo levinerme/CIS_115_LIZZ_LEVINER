@@ -55,6 +55,7 @@ quantity_limits={
 		"Ring_camera":4,
 		"Smart_TV":2
 	}
+	
 boughtItems=[]
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
 Quantity =input(f"Enter quanity for product {enteredID}: ")
