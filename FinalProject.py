@@ -58,8 +58,9 @@ quantity_limits={
 	
 boughtItems=[]
 enteredID = input("Enter the product ID you would like add to your shopping cart!: ")
-Quantity =input(f"Enter quanity for product {enteredID}: ")
-boughtItems[enteredID] = boughtItems.get(enteredID, 0)+int(Quantity)
+Quantity =input(f"Enter quantity for product {enteredID}: ")
+if enteredID in boughtItems:
+	boughtItems[enteredID] = int(Quantity) 
 
 limit = quantity_limits.get(enteredID, None)
 if limit and Quantity > limit:
@@ -69,7 +70,7 @@ if enteredID in boughtItems:
 	print(f"{enteredID} is already in your cart! {boughtItems[enteredID]}")
 	
 Greedy =input("Would you like to add another product? (y/n): ")
-if Greedy == "n" :
+if Greedy == "y" :
 		checkout= input("Are you ready to check out? (y/n): ")
 		if checkout == "y" :
 				pass
@@ -134,4 +135,4 @@ def show_billing():
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n")
 	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n"\
-	print(f"{Quantity}, {Price}, {Description} {total} sep=_______")
+	
