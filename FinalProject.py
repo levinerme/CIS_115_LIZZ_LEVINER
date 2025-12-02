@@ -73,6 +73,8 @@ def AddtoCart():
 	if enteredID in boughtItems:
 		print(f"{enteredID} is already in your cart! {boughtItems[enteredID]}")
 	
+	boughtItems.update({enteredID:{"Quantity": Quantity}})
+
 	Greedy =input("Would you like to add another product? (y/n): ")
 	if Greedy == "n" :
 		checkout= input("Are you ready to check out? (y/n): ")
@@ -145,6 +147,13 @@ def Checkout():
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n"\
 	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n")
-print(f"")
+	for productID, item_data in boughtItems.items():
+		product = products[productID]
+		sku = product['SKU']
+		qty = item_data['Quantity']
+		price = product['Price']
+		description = product['Description']
+		cost_total = float(price) * int(qty)
+		print(f"{sku}~~~~~~~~~{qty}~~~~~~~~~${price}~~~~~{description}~~~~~~~~~${cost_total:.2f}")
 if __name__ == "__main__":
 	AddtoCart()
