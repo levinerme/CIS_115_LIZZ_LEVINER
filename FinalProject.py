@@ -146,7 +146,9 @@ def Checkout():
 	"-----------------------------------------------------------------------------\n"\
 	" ------------------------------------------------------------------------------\n"\
 	" ******************************************************************************\n"\
-	"  SKU~~~~~~~~~~~~~~~Qty~~~~~~~~~~~~Price~~~~~~~~Description~~~~~~~~~~~~~Total\n")
+	"  SKU				Qty		Price  Description			Total\n")
+	print("********************************************************************")
+	cartTotal = 0.0
 	for productID, item_data in boughtItems.items():
 		product = products[productID]
 		sku = product['SKU']
@@ -154,6 +156,9 @@ def Checkout():
 		price = product['Price']
 		description = product['Description']
 		cost_total = float(price) * int(qty)
-		print(f"{sku}~~~~~~~~~{qty}~~~~~~~~~${price}~~~~~{description}~~~~~~~~~${cost_total:.2f}")
+		cartTotal += cost_total
+		print(f"{sku}		{qty}	${price}	{description}	${cost_total:.2f} ")
+	print("********************************************************************")
+	print(f"Cart Total: ${cartTotal:.2f}")
 if __name__ == "__main__":
 	AddtoCart()
